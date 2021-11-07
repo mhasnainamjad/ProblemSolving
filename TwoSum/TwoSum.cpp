@@ -28,15 +28,12 @@
 std::vector<int> TwoSum(std::vector<int>& nums, int target)
 {
     std::unordered_map<int, int> s_map;
-    for(int i=0; i<nums.size(); i++) {
-        s_map[nums[i]] = i;
-    }
-    
     for(int i=0; i<nums.size(); i++)
     {
         if(s_map.find(target-nums[i]) != s_map.end()) {
             return {i, s_map[target-nums[i]]};
         }
+        s_map[nums[i]] = i;
     }
     return {};
 }
@@ -73,7 +70,7 @@ int main(int argc, char *argv[])
     std::string given_vec = argv[1];
     auto nums = parseStringToVector(given_vec);
     int target = std::stoi(argv[2]);
-    
+
     auto res = TwoSum(nums, target);
     std::cout << "Results is: ";
     for(auto i : res) {
