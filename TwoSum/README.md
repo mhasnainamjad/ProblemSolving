@@ -8,6 +8,3 @@
     - Second argument should be the target you want to find from given vector.
     - example to run this program
         `twosum [1,2,3,4] 5`
-
-
-
